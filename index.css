@@ -1,0 +1,31 @@
+body,header,h1{
+	padding:0;
+	margin:0;
+}
+body{
+	/*background-image:url(background.png),-moz-linear-gradient(top,#000 20%,#638da6),
+	-moz-radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+	background-position:0 100%,0 0,40px 60px;
+	background-size:400px 121px,100% 100%,350px 350px;
+	background-repeat:repeat-x,no-repeat,no-repeat;
+	background:url(background.png) 0 100% repeat-x,-webkit-linear-gradient(top,#000 20%,#638da6);
+	/*background-image: , -moz-radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px), -moz-radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px), -moz-radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px); background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+	background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;*/
+	background-image:   -moz-radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px), 
+	-moz-radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px), 	
+	-moz-radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),  
+	-moz-radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),   
+	-moz-radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px),
+	-moz-linear-gradient(top,#000 20%,#638da6); 
+	background-size: 100px 50px,100px 50px, 350px 350px, 250px 250px, 150px 150px,100% 100%;  
+	background-position: 10px 0,250px 15px, 10px 0px, 30px 20px, 30px 10px,0 0;
+	background-repeat:no-repeat,no-repeat,repeat-x,repeat-x,repeat-x,repeat-x;
+}
+div{
+	width:960px;
+	margin:70px auto 0 auto;
+	text-align:center;
+	background:rgba(30,44,51,.71);
+	border-radius:10px;
+	height:1000px;
+}
