@@ -69,12 +69,11 @@ h1{
 	top:0;
 	left:0;
 	z-index: 0;
-	
+	box-shadow:0 0 10px rgba(30,44,51,.71);
 }
 .cover{
 	z-index:2000;
-	background:-moz-radial-gradient(transparent 60%,rgba(30,44,51,.71) 100%),
-			   -moz-linear-gradient(0,rgba(30,44,51,.71) 0%,transparent 5%,transparent 95%,rgba(30,44,51,.71) 100%);
+	background:-moz-radial-gradient(transparent 60%,rgba(30,44,51,.71) 100%);
 }
 .cb-slideshow li img{
 	width:100%;
@@ -93,6 +92,7 @@ h1{
 	animation: imageAnimation 36s linear infinite 0s;
 	-moz-animation: imageAnimation 36s linear infinite 0s;
 	-webkit-animation: imageAnimation 36s linear infinite 0s;	
+	
 }
 .cb-slideshow li div{
 	z-index: 1000;
