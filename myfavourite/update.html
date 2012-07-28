@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>PageTransition</title>
+		<link rel="stylesheet" type="text/css" href="demo.css" />
+		<link rel="stylesheet" type="text/css" href="style2.css" />
+	</head>
+	<body>
+		<!-- Home -->
+		<div id="mylife">
+			<ul>
+				<!-- page top -->
+				<li id="pageFour" class="panel">
+					<div class="content">
+						<h2>page Four</h2>
+						<p>Some content  ssss</p>
+					</div>
+				</li>
+				<li id="pageThree" class="panel">
+					<div class="content">
+						<h2>Page Three</h2>
+						<p>Some content  ssss</p>
+					</div>
+				</li>
+				<li id="pageTwo" class="panel">
+					<div class="content">
+						<h2>Page Two</h2>
+						<p>Some content  ssss</p>
+					</div>
+				</li>
+				
+				<li id="pageOne" class="panel">
+					<div class="content">
+						<h2>Page one</h2>
+						<p>Some content  ssss</p>
+					</div>
+				</li>
+				<li id="pageTop" class="panel">
+					<div class="content">
+						<p class="c-special">to my favourite person：</p>
+						<h2>Roger Federer</h2>
+						<p>Some content  ssss</p>
+					</div>
+				</li>				
+			</ul>
+		</div>
+		<div id="header">
+			<ul id="navigation">
+				<li><a id="perviousPage" href="#">pervious page</a></li>
+				<li><a id="nextPage" href="#">next page</a></li>
+				<li><a id="again" href="#">again</a></li>
+				
+			</ul>
+		</div>
+	<script>
+		var pageChange = (function(){
+			var listClickID,tagName,nextPageId,againId,perviousPageId;
+			var listClick=document.getElementById(listClickID||"mylife").getElementsByTagName(tagName||"li");
+			var i=0,length=listClick.length;
+			var nextPage=document.getElementById(nextPageId||"nextPage");
+			var again=document.getElementById(againId||"again");
+			var perviousPage=document.getElementById(perviousPageId||"perviousPage");
+			var init=function(){							
+							console.log(this);
+							var id=this.id;
+							if(i>=length){
+								return false;
+							}
+							var block=listClick[length-i-1];
+							i++;
+							console.log(block);
+							block.style.MozTransitionDelay="0s";
+							block.style.WebkitTransitionDelay="0s";
+							if(block.className.indexOf("panelclick")==-1)
+								block.className+=" panelclick";					
+			};
+			var restart=function(){
+					i=0;
+					var j=0;
+					for(;i < length;i++){
+						var block=listClick[i];
+						console.log(block);
+						if(block.className.indexOf("panelclick")!=-1)
+							{
+								block.className=block.className.replace(" panelclick","");
+								block.style.MozTransitionDelay=j+"s";
+								block.style.WebkitTransitionDelay=j+"s";
+								j++;
+							}
+					}
+					j=0;
+					i=0;
+			};
+			var previous=function(){					
+						if((length-i)>length-1){
+							return false;
+						}
+						var block=listClick[length-i];
+						console.log(block);
+						if(block.className.indexOf("panelclick")!=-1)
+						{
+							block.className=block.className.replace(" panelclick","");
+							block.style.MozTransitionDelay="0s";
+							block.style.WebkitTransitionDelay="0s";
+						}
+						i=i-1;					
+			};
+			return {
+				setListClick:function(listID){
+					listClickID=listID;
+					return this;
+				},
+				setTagName:function(tagname){
+					tagName=tagname;
+					return this;
+				},
+				setNextPageId:function(nid){
+					nextPageId=nid;
+					return this;
+				},
+				setAgainId:function(aid){
+					againId=aid;
+					return this;
+				},
+				setPerviousPageId:function(pid){
+					perviousPageId=pid;
+					return this;
+				},
+				mouseEvent:function(){
+					var body=document.getElementsByTagName("body")[0];
+					var that=this;
+					body.addEventListener("keydown",function(event){
+						console.log(event.keyCode);
+						if(event.keyCode==37){
+							previous();
+						}
+						else if(event.keyCode==39){
+							init();
+						}
+					});
+					perviousPage.addEventListener("click",function(event){
+						previous();
+					});
+					nextPage.addEventListener("click",function(event){
+						init();
+					});
+					again.addEventListener("click",function(event){
+						restart();
+					});
+					return this;
+				}
+			}
+		}(pageChange || {}));
+		pageChange.mouseEvent();
+	</script>
+	</body>
+</html>
