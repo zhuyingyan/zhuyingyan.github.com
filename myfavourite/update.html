@@ -55,26 +55,43 @@
 		</div>
 	<script>
 		var pageChange = (function(){
-			var listClickID,tagName,nextPageId,againId,perviousPageId;
+			/**
+			* listClickID 取得放着全部页面的ID号
+			* tagName     每个页面放于的标签
+			* i           这个比较重要是当前第i个页面，从0开始到length-1
+			* length      页面的个数
+			* nextPageId  下一页按钮的ID号
+			* again       重新来过按钮的ID号
+			* perviousPage上一页按钮的ID号
+			* 
+			*  
+			*/
+			var listClickID,tagName,nextPageId,againId,perviousPageId;   
 			var listClick=document.getElementById(listClickID||"mylife").getElementsByTagName(tagName||"li");
 			var i=0,length=listClick.length;
 			var nextPage=document.getElementById(nextPageId||"nextPage");
 			var again=document.getElementById(againId||"again");
 			var perviousPage=document.getElementById(perviousPageId||"perviousPage");
+			/**
+			* init        获取下一页并加上className实现动画效果
+			*/
 			var init=function(){							
-							console.log(this);
+							
 							var id=this.id;
 							if(i>=length){
 								return false;
 							}
 							var block=listClick[length-i-1];
 							i++;
-							console.log(block);
+							
 							block.style.MozTransitionDelay="0s";
 							block.style.WebkitTransitionDelay="0s";
 							if(block.className.indexOf("panelclick")==-1)
 								block.className+=" panelclick";					
 			};
+			/**
+			* restart       页面都从上往下回来，而且是有层次的一个接着一个，这里我就用了延时
+			*/
 			var restart=function(){
 					i=0;
 					var j=0;
@@ -92,6 +109,9 @@
 					j=0;
 					i=0;
 			};
+			/**
+			* previous        获取上一页并删去className实现动画效果
+			*/
 			var previous=function(){					
 						if((length-i)>length-1){
 							return false;
@@ -127,6 +147,9 @@
 					perviousPageId=pid;
 					return this;
 				},
+				/**
+				* 加入事件绑定，实现相关键盘，鼠标点击效果
+				*/
 				mouseEvent:function(){
 					var body=document.getElementsByTagName("body")[0];
 					var that=this;
