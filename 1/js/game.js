@@ -83,11 +83,7 @@ Game.init=function(){
 		//Game.Start();	
 	 });
 Game.Data.AudioCache=loadMusic([
-		{id:"gateHit",src:"./audio/城门被打.ogg"},
-		{id:"shenShou",src:"./audio/神兽.ogg"},
-		{id:"bgMusic",src:"./audio/bgmusic.mp3"},
-		{id:"fail",src:"./audio/fail.mp3"},
-		{id:"win",src:"./audio/win.mp3"}		
+			
 	],function(){
 		var audio=Game.Data.AudioCache["bgMusic"];
 		audio.play();
