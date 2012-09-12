@@ -49,14 +49,14 @@ body{
 	float:left;
 }
 .blogName a{
-	font-size:0;
+	text-indent:-1000em;
 	width:100%;
 	height:100%;
 	display:block;
 	background:url(title.png) no-repeat;
 }
 .goodSentence{
-	font-size:0;
+	text-indent:-1000em;
 }
 .nav{
 	float:left;
@@ -67,7 +67,8 @@ body{
 }
 #header:after,#pictures:after{
 	content:"";
-	font-size:0;
+	visibility:hidden;
+	height:0;
 	clear:both;
 	display:block;
 }
@@ -91,7 +92,8 @@ body{
 }
 #introduce:after{
 	content:"";
-	font-size:0;
+	visibility:hidden;
+	height:0;
 	clear:both;
 	display:block;
 }
@@ -223,9 +225,13 @@ h3 a:hover{
 	margin-top:30px;
 	margin-left:20px;
 }
+.workContent{
+	margin-bottom:20px;
+}
 .workContent:after{
 	content:"";
-	font-size:0;
+	visibility:hidden;
+	height:0;
 	display:block;
 	clear:both;
 }
@@ -235,7 +241,7 @@ h3 a:hover{
 	width:66%;
 	height:360px;
 	border:1px solid #1fb5c1;
-	margin-bottom:10px;
+	
 	background:rgba(255,255,255,.8);
 	text-align:center;
 }
