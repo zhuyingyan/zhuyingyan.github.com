@@ -117,7 +117,7 @@ body{
 }
 #lastArticle{
 	width:60%;
-	height:316px;
+	height:256px;
 	margin-top:30px;
 	padding:1px 0 0 20px;
 	float:left;
@@ -126,25 +126,49 @@ h3{
 	font-size:30px;
 	padding-bottom:10px;
 }
-.content{
+.content {
+	overflow: hidden;
+	position: relative;
+	height: 168px;
 	font-size:14px;
 	line-height:1.5;
-	height:275px;
-	text-overflow:ellipsis;
-	overflow:hidden;
-}
-.content p{
+	}
+
+.content:before {
+	content:"";
+	float: left;
+	width: 5px; height: 168px; }
+
+.content > *:first-child {
 	text-indent:2em;
-	text-overflow:ellipsis;
-	overflow:hidden;
+	float: right;
+	width: 100%;
+	margin-left: -5px; }		
+
+.content:after {
+	content: "\02026 Read More"; 
+
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	float: right; position: relative;
+	top: -22px; left: 100%; 
+	width: 7em; margin-left: -7em;
+	padding-right: 5px;
+	text-align: right;
+	background-size:100%,100%;
+	background:url(bg.jpg);
+ }
+.content a{ 
+	position:absolute;
+	left: 0; top: 0;
+	width: 100%; height: 100%;
+	overflow: hidden; text-indent: -9999px; 
 }
-.content .more{
-	float:right;
-	color:#eb3e99;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
-}
+.content i, .content:after {
+	font-style: normal; color: #eb3e99;}
+
+.content i:before { content: "Read More";}
 h3 a{
 	color:#666;
 }
