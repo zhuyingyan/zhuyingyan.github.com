@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>PageTransition</title>
+		<link rel="stylesheet" type="text/css" href="demo.css" />
+		<link rel="stylesheet" type="text/css" href="style3.css" />
+	</head>
+	<body>
+		<!-- Home -->
+		<div id="mylife">
+			<ul>
+				<!-- page top -->
+				<li id="pageTwentyThire" class="panel">
+					<div class="content">
+						<h2>Q&A</h2>
+					</div>
+				</li>
+				<li id="pageTwentyTwo" class="panel">
+					<div class="content">
+						<h2>经验分享</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p>兴趣</p>
+								<p>理论基础</p>
+								<p>动手实践</p>
+								<p>心得体会</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="pageTwentyOne" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>This指针</strong></p>
+							</div>
+							<p>this与上下文中可执行代码的类型有直接关系，this值在进入上下文时确定，并且在上下文运行期间永久不变。</p>
+							<p>在通常的函数调用中，this是由激活上下文代码的调用者来提供的，即调用函数的父上下文(parent context )。this取决于调用函数的方式。</p>
+							</div>
+					</div>
+				</li>
+				<li id="pageTwenty" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>闭包</strong></p>
+							</div>
+							<p>想一想 </p>
+							<img src="images/code7.jpg" alt="code" />
+							</div>
+					</div>
+				</li>
+				<li id="pageNighteen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>闭包</strong></p>
+							</div>
+							<p>闭包是一系列代码块，并且静态保存所有父级的作用域。通过这些保存的作用域来搜寻到函数中的自由变量。 </p>
+							<img src="images/code6.jpg" alt="code" />
+							<img class="givebg" src="images/pic6.png" alt="pic" />
+							</div>
+					</div>
+				</li>
+				<li id="pageEighteen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<img class="toRight givebg" src="images/pic5.png" alt="pic" />
+							<div class="contentlist withCode">
+	　　						<p><strong>作用域链</strong></p>
+							</div>
+							<img src="images/code5.jpg" alt="code" />
+							
+							</div>
+					</div>
+				</li>
+				<li id="pageSeventeen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>作用域链</strong></p>
+							</div>
+							<p>变量对象(variable object) 是与执行上下文相关的 数据作用域(scope of data) 。</p>
+							<p>它是与上下文关联的特殊对象，用于存储被定义在上下文中的 变量(variables) 和 函数声明(function declarations) 。</p>
+							<p>我们会用到内部函数[inner functions]，在这些内部函数中，我们可能会引用它的父函数变量，或者全局的变量。我们把这些变量对象成为上下文作用域对象[scope object of the context]. 类似于上面讨论的原型链[prototype chain]，我们在这里称为作用域链[scope chain]。</p>
+							<p>作用域链是一个 对象列表(list of objects) ，用以检索上下文代码中出现的 标识符(identifiers) 。</p>
+							</div>
+					</div>
+				</li>
+				<li id="pageSixteen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>执行上下文</strong></p>
+							</div>
+							<p>一个执行的上下文可以抽象的理解为object。每一个执行的上下文都有一系列的属性（我们称为上下文状态），他们用来追踪关联代码的执行进度。</p>
+							<img class="givebg" src="images/pic4.png" alt="pic" />
+							<p class="toTop">变量对象(variable object)，this指针(this value)，作用域链(scope chain)</p>
+							</div>
+					</div>
+				</li>
+				<li id="pageFifteen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>执行上下文栈</strong></p>
+							</div>
+							<img class="givebg" src="images/pic3.png" alt="pic" />
+							<p>当一段程序开始时，会先进入全局执行上下文环境[global execution context], 这个也是堆栈中最底部的元素。此全局程序会开始初始化，初始化生成必要的对象[objects]和函数[functions]. 在此全局上下文执行的过程中，它可能会激活一些方法（当然是已经初始化过的），然后进入他们的上下文环境，然后将新的元素压入堆栈。在这些初始化都结束之 后，这个系统会等待一些事件（例如用户的鼠标点击等），会触发一些方法，然后进入一个新的上下文环境。</p>
+						</div>
+					</div>
+				</li>
+				<li id="pageForteen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>构造函数</strong></p>
+							</div>
+							<img class="givebg" src="images/pic2.png" alt="pic" />
+						</div>
+					</div>
+				</li>
+				<li id="pageThirsteen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>构造函数</strong></p>
+							</div>
+							<img src="images/code4.jpg" alt="code" />
+						</div>
+					</div>
+				</li>
+				<li id="pageTwelve" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>构造函数</strong></p>
+							</div>
+							<img src="images/code3.jpg" alt="code" />
+						</div>
+					</div>
+				</li>
+				<li id="pageEleven" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>构造函数</strong></p>
+	　　						<p>构造函数在 特定模式下创建对象，并自动为创建的新对象设置了原型对象。</p>
+							</div>
+							<img src="images/code2.jpg" alt="code" />
+						</div>
+					</div>
+				</li>
+				<li id="pageTen" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<div class="contentlist withCode">
+	　　						<p><strong>原型链</strong></p>
+	　　						<p>this这个值在一个继承机制中，仍然是指向它原本属于的对象，而不是从原型链上找到它时，它所属于的对象。例如，以上的例子，this.y是从b和c中获取的，而不是a。当然，你也发现了this.x是从a取的，因为是通过原型链机制找到的。</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="pageNight" class="panel">
+					<div class="content">
+						<h2>JavaScript进阶</h2>
+						<div class="para toblock">
+							<img class="toRight" src="images/code1.jpg" alt="code" />
+							<div class="contentlist withCode">
+	　　						<p><strong>原型链</strong></p>
+	　　						<p>原型链是一个由对象组成的有限对象链由于实现继承和共享属性。</p>
+							</div>
+							
+							<img src="images/pic1.png" alt="pic" />
+						</div>
+					</div>
+				</li>
+				<li id="pageEight" class="panel">
+					<div class="content">
+						<h2>JavaScript基础</h2>
+						<div class="para">
+							<div class="contentlist">
+	　　						<p><strong>函数</strong></p>
+	　　						<p>3种声明方式function声明，function操作符和function构造器（不推荐这种，导致解析两次，影响性能）。
+ Java的向量（vectors）。数组的值根据键来定位，而不是根据偏移量，这使JavaScript数组非常方便地使用，但不适合那些数字分析应用。</p>
+	　　						<p>函数是对象，函数名是指针</p>
+								<p>解析器会率先读取函数声明，函数表达式要等解析器执行到才被解析执行。</p>
+								<p>没有重载</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="pageSeven" class="panel">
+					<div class="content">
+						<h2>JavaScript基础</h2>
+						<div class="para">
+							<div class="contentlist">
+	　　						<p><strong>数组</strong></p>
+	　　						<p>JavaScript中数组也是哈希表对象，这使它非常好地与稀少的数组程序相称。当你声明了一个数组，你不需要声明它的大小，数组会自增长，这很像 Java的向量（vectors）。数组的值根据键来定位，而不是根据偏移量，这使JavaScript数组非常方便地使用，但不适合那些数字分析应用。</p>
+	　　						<p>A[0]=“aa”  或者A[“first”]=“aa”</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="pageSix" class="panel">
+					<div class="content">
+						<h2>JavaScript基础</h2>
+						<div class="para">
+							<div class="contentlist">
+	　　						<p><strong>对象</strong></p>
+	　　						<p>一个对象就是一个涉及到键/值对的集合，键是字符串（或者其他的元素比如那些被转化为字符串的数字），值可以是任何数据类型，包括其他对象。对象经常以哈希表的方式实现，但是没有任何哈希表（比如哈希函数或重写的函数）天性的可见。</p>
+	　　						<p>Object类型和JSON的区别</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="pageFive" class="panel">
+					<div class="content">
+						<h2>JavaScript基础</h2>
+						<div class="para">
+							<div class="contentlist">
+	　　						<p><strong>数据类型</strong></p>
+	　　						<p>弱类型语言  使用var声明  解释性语言</p>
+	　　						<p>JavaScript包含一小套数据类型，它有3种简单的类型：boolean,number, 和 string;特殊的值：null,undefined;其他的所有基于object类型的变化。</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="pageFour" class="panel">
+					<div class="content">
+						<h2>JavaScript的设计</h2>
+						<div class="para">JavaScript作者的设计思路是这样的：
+							<div class="contentlist">
+	　　						<p>（1）借鉴C语言的基本语法；</p>
+	　　						<p>（2）借鉴Java语言的数据类型和内存管理；</p>
+	　　						<p>（3）借鉴Scheme语言，将函数提升到"第一等公民"（first class）的地位；</p>
+	　　						<p>（4）借鉴Self语言，使用基于原型（prototype）的继承机制。</p>
+							</div>
+							所以，
+							<strong>Javascript语言实际上是两种语言风格的混合产物----（简化的）函数式编程+（简化的）面向对象编程。
+							</strong>
+						</div>
+					</div>
+				</li>
+				<li id="pageThree" class="panel">
+					<div class="content">
+						<h2>JavaScript的大牛们</h2>					
+						<div class="withPic p4"><img src="images/4.jpg" alt="Nicholas C. Zakas
+"/><span>《JavaScript高级程序设计》作者：
+Nicholas C. Zakas
+</span>
+						</div>
+						<div class="withPic p5"><img src="images/5.jpg" alt="Peter-Paul Koch(PPK)
+"/><span>《PPK谈JavaScript》作者：
+Peter-Paul Koch(PPK)
+</span>
+						</div>
+					</div>
+				</li>
+				<li id="pageTwo" class="panel">
+					<div class="content">
+						<h2>JavaScript的大牛们</h2>
+						
+						<div class="withPic p3"><img src="images/2.jpg" alt="Douglas Crockford
+"/><span>《JavaScript语言精粹》的作者：
+Douglas Crockford
+</span>
+						</div>
+						<div class="withPic p2"><img src="images/3.jpg" alt="John Resig
+"/><span>Jquery作者：
+John Resig
+</span>
+						</div>
+					</div>
+				</li>
+				
+				<li id="pageOne" class="panel">
+					<div class="content">
+						<h2>诞生</h2>
+						<p class="special">JavaScript他爹其实并不喜欢JavaScript，只用10天时间就把JavaScript设计出来了。有兴趣可以看---<a href="http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html">JavaScript诞生记</a></p>
+						<div class="withPic"><img src="images/1.jpg" alt="Brendan Eich
+"/><span>JavaScript的发明者：
+Brendan Eich
+</span></div>
+					</div>
+				</li>
+				<li id="pageTop" class="panel">
+					<div class="content index">
+						<h2>我们仍未知道那天所讲的叫JS</h2>
+						<p class="toRight">主讲人：朱颖妍</p>
+					</div>
+				</li>				
+			</ul>
+		</div>
+		<div id="header">
+			<ul id="navigation">
+				<li><a id="perviousPage" href="#">pervious page</a></li>
+				<li><a id="nextPage" href="#">next page</a></li>
+				<li><a id="again" href="#">again</a></li>
+				
+			</ul>
+		</div>
+	<script>
+		var pageChange = (function(){
+			/**
+			* listClickID 取得放着全部页面的ID号
+			* tagName     每个页面放于的标签
+			* i           这个比较重要是当前第i个页面，从0开始到length-1
+			* length      页面的个数
+			* nextPageId  下一页按钮的ID号
+			* again       重新来过按钮的ID号
+			* perviousPage上一页按钮的ID号
+			* 
+			*  
+			*/
+			var listClickID,tagName,nextPageId,againId,perviousPageId;   
+			var listClick=document.getElementById(listClickID||"mylife").getElementsByTagName(tagName||"li");
+			var i=0,length=listClick.length;
+			var nextPage=document.getElementById(nextPageId||"nextPage");
+			var again=document.getElementById(againId||"again");
+			var perviousPage=document.getElementById(perviousPageId||"perviousPage");
+			/**
+			* init        获取下一页并加上className实现动画效果
+			*/
+			var init=function(){							
+							
+							var id=this.id;
+							if(i>=length){
+								return false;
+							}
+							var block=listClick[length-i-1];
+							i++;
+							
+							block.style.MozTransitionDelay="0s";
+							block.style.WebkitTransitionDelay="0s";
+							if(block.className.indexOf("panelclick")==-1)
+								block.className+=" panelclick";					
+			};
+			/**
+			* restart       页面都从上往下回来，而且是有层次的一个接着一个，这里我就用了延时
+			*/
+			var restart=function(){
+					i=0;
+					var j=0;
+					for(;i < length;i++){
+						var block=listClick[i];
+						console.log(block);
+						if(block.className.indexOf("panelclick")!=-1)
+							{
+								block.className=block.className.replace(" panelclick","");
+								block.style.MozTransitionDelay=j+"s";
+								block.style.WebkitTransitionDelay=j+"s";
+								j++;
+							}
+					}
+					j=0;
+					i=0;
+			};
+			/**
+			* previous        获取上一页并删去className实现动画效果
+			*/
+			var previous=function(){					
+						if((length-i)>length-1){
+							return false;
+						}
+						var block=listClick[length-i];
+						console.log(block);
+						if(block.className.indexOf("panelclick")!=-1)
+						{
+							block.className=block.className.replace(" panelclick","");
+							block.style.MozTransitionDelay="0s";
+							block.style.WebkitTransitionDelay="0s";
+						}
+						i=i-1;					
+			};
+			return {
+				setListClick:function(listID){
+					listClickID=listID;
+					return this;
+				},
+				setTagName:function(tagname){
+					tagName=tagname;
+					return this;
+				},
+				setNextPageId:function(nid){
+					nextPageId=nid;
+					return this;
+				},
+				setAgainId:function(aid){
+					againId=aid;
+					return this;
+				},
+				setPerviousPageId:function(pid){
+					perviousPageId=pid;
+					return this;
+				},
+				/**
+				* 加入事件绑定，实现相关键盘，鼠标点击效果
+				*/
+				mouseEvent:function(){
+					var body=document.getElementsByTagName("body")[0];
+					var that=this;
+					body.addEventListener("keydown",function(event){
+						console.log(event.keyCode);
+						if(event.keyCode==37){
+							previous();
+						}
+						else if(event.keyCode==39){
+							init();
+						}
+					});
+					perviousPage.addEventListener("click",function(event){
+						previous();
+					});
+					nextPage.addEventListener("click",function(event){
+						init();
+					});
+					again.addEventListener("click",function(event){
+						restart();
+					});
+					return this;
+				}
+			}
+		}(pageChange || {}));
+		pageChange.mouseEvent();
+	</script>
+	</body>
+</html>
