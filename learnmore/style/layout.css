@@ -1,0 +1,25 @@
+.l-floutL{
+	float:left;
+}
+.l-logo{
+	width:31.6239%;
+}
+.l-nav{
+	width:65.812%;
+}
+.l-nofirst{
+	margin-left: 2.5641%;
+}
+.visible-phone{
+	display:none;
+}
+.l-clear:after{
+	content:"";
+	display:block;
+	clear:both;
+	font-size:1em;
+}
+.footer{
+	clear:both;
+	margin:2em 0 0 0;
+}
