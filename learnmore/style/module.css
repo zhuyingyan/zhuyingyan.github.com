@@ -205,14 +205,8 @@
 .visible-phone{
 	display:none;
 }
-@media (max-width: 767px) {
-}
-@media (min-width: 768px) and (max-width: 979px) {
-	body{
-		font-size:15px;
-	}
-}
-@media (max-width: 480px) {
+
+@media  (max-width: 979px) {          /*480*/
 	body{
 		font-size:14px;
 	}
@@ -238,7 +232,7 @@
 		margin-top:1.5em;
 	}
 	.m-name{
-		font-size:1.4em;
+		font-size:1.6em;
 	}
 	.m-imagenew{
 		float:none;
@@ -251,9 +245,9 @@
 	}
 	/*导航栏部分*/
 	.m-navmain{
-		width:27px;
 		float:left;
 		position:relative;
+		margin-right:0.5em;
 	}
 	.m-navmain img,.tosidenav img{
 		width:27px;
@@ -267,11 +261,27 @@
 		line-height:90%;
 		cursor:pointer;
 	}
-	.shawMainNav{
+	.m-navmain .m-button,.tosidenav .m-button{
+		
+		float:left;
+		position:relative;
+		padding:0.3em 0.3em 0 0.3em;
+		width:85%;
+		margin-top:0.5em;
+		cursor:pointer;
+		color:#fff;
+	}
+	.m-navmain img,.tosidenav img{
+		
+		font-size:2em;
+		line-height:90%;
+		cursor:pointer;
+	}
+	nav.shawMainNav{
 		display:block;
 		position:absolute;
-		width:600%;
-		margin:0 0 0 -300%;
+		width:300%;
+		margin:15% 0 0 -150%;
 		left:50%;
 	}
 	.shawMainNav .nav{
@@ -311,7 +321,8 @@
 	/*显示侧边栏部分*/
 	
 	.tosidenav{
-		display:block;
+		float:left;
+		position:relative;
 	}
 	.tosidenav img{
 		width:31px;
@@ -335,5 +346,28 @@
 	}
 	.showAsideNav li{
 		display:inline-block;
+	}
+}
+/*
+@media (max-width: 767px) {
+	body{
+		font-size:14px;
+	}
+}*/
+@media (min-width: 768px) and (max-width: 979px) {
+	body{
+		font-size:15px;
+	}
+	.m-imagenew{
+		float:left;
+		width:55%;
+		max-width:55%;
+		margin:0 0.8em 0.8em 0;
+	}
+	.m-small{
+		width:44%;
+	}
+	.l-nofirst{
+		margin: 0 0 0 2.5641%;
 	}
 }
