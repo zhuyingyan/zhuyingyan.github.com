@@ -280,8 +280,8 @@
 	nav.shawMainNav{
 		display:block;
 		position:absolute;
-		width:300%;
-		margin:15% 0 0 -150%;
+		width:400%;
+		margin:15% 0 0 -200%;
 		left:50%;
 	}
 	.shawMainNav .nav{
