@@ -206,6 +206,34 @@
 	display:none;
 }
 
+/*二级内容*/
+.m-secondse{
+	margin-top:0.5em;
+}
+.m-page{
+	text-align:center;
+	color:#73B501;
+	margin-bottom:1em;
+}
+.m-page a{
+	font-size:0.8em;
+	color:#73B501;
+}
+.m-page a:hover{
+	text-decoration:underline;
+}
+.inputnum{
+	width:2em;
+	height:0.8em;
+}
+.butGo{
+	font-size:0.8em;
+	background: #93d521;
+    border: 1px solid #539501;
+    box-shadow: 0 0 3px rgba(115, 181, 1, 0.78);
+	-moz-box-shadow: 0 0 3px rgba(115, 181, 1, 0.78);
+	-webkit-box-shadow: 0 0 3px rgba(115, 181, 1, 0.78);
+}
 @media  (max-width: 979px) {          /*480*/
 	body{
 		font-size:14px;
