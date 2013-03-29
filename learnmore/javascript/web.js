@@ -1,5 +1,5 @@
 $(function(){
-	$('.m-navmain').click(function(){
+	$('.m-navmain m-button').click(function(){
 		if($('#aside-nav').hasClass('showAsideNav')){
 			$('#aside-nav').removeClass('showAsideNav');
 		}
