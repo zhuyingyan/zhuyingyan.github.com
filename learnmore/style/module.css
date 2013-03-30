@@ -234,6 +234,41 @@
 	-moz-box-shadow: 0 0 3px rgba(115, 181, 1, 0.78);
 	-webkit-box-shadow: 0 0 3px rgba(115, 181, 1, 0.78);
 }
+/*三级内容*/
+.l-nav .m-sidehead{
+	margin-left:0;
+}
+.m-thirdse .m-titlenew{
+	font-size:1.4em;
+	color:#000;
+	font-family:"宋体";
+}
+.m-thirdse .m-more{
+	padding:0.2em 1.2em;
+	font-size:1.2em;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+.m-videoList{
+	clear:both;
+	
+}
+.m-videoUl{
+	padding:0;
+}
+.m-videoUl li{
+	width:28%;
+	margin:0 4% 2% 0;
+	display:inline-block;
+}
+.m-videoUl a{
+	display:block;
+}
+.m-videoUl a:hover{
+	color:#73B501;
+	text-shadow:1px 1px 1px rgba(135,201,33,.7);
+}
 @media  (max-width: 979px) {          /*480*/
 	body{
 		font-size:14px;
@@ -375,6 +410,13 @@
 	.showAsideNav li{
 		display:inline-block;
 	}
+	.m-videoUl{
+		padding-left:1em;
+	}
+	.m-videoUl li{
+		width:80%;
+		display:block;
+	}
 }
 /*
 @media (max-width: 767px) {
@@ -382,7 +424,7 @@
 		font-size:14px;
 	}
 }*/
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 580px) and (max-width: 979px) {  /*768*/
 	body{
 		font-size:15px;
 	}
@@ -397,5 +439,12 @@
 	}
 	.l-nofirst{
 		margin: 0 0 0 2.5641%;
+	}
+	.m-videoUl{
+		padding-left:0;
+	}
+	.m-videoUl li{
+		width:28%;
+		display:inline-block;
 	}
 }
