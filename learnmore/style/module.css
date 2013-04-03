@@ -125,7 +125,7 @@
 	padding:0 0.5em;
 	font-size:0.8em;
 }
-.m-newest, .m-smallgroup{
+.m-newest, .m-smallgroup,.m-detail{
 	width:100%;
 	margin:1.5em 0;
 }
@@ -269,6 +269,62 @@
 	color:#73B501;
 	text-shadow:1px 1px 1px rgba(135,201,33,.7);
 }
+/*三级页面 atricle内容*/
+.picWithWord{
+	position:relative;
+	float:right;
+	width:66%;
+	margin:1%;
+	
+}
+.picWithWord img{
+	float:left;
+	width:80%;
+	max-width:80%;
+	
+}
+.word{
+	position:absolute;
+	bottom:0;
+	font-size:0.8em;
+	color:#777;
+	margin:0 0 0 1%;
+	
+}
+.content p{
+	text-indent:2em;
+}
+/*视频展示部分*/
+.hidden{
+	display:none;
+}
+.videoPlay{
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	background:rgba(0,0,0,.8);
+	width:100%;
+	
+}
+.videoU{
+	width:60%;
+	position:absolute;
+	left:50%;
+	margin:10% 0 0 -30%;
+	max-width:60%;
+}
+.videoU video{
+	width:100%;
+	max-width:100%;
+}
+[class^='a-']{
+	color:#fff;
+}
+.a-close,.a-next{
+	float:right;
+	cursor:pointer;
+}
 @media  (max-width: 979px) {          /*480*/
 	body{
 		font-size:14px;
@@ -346,6 +402,7 @@
 		width:400%;
 		margin:15% 0 0 -200%;
 		left:50%;
+		z-index:100;
 	}
 	.shawMainNav .nav{
 		padding:0.5em;
@@ -360,7 +417,7 @@
 		content:"";
 		position:absolute;
 		left:50%;
-		
+		z-index:1000;
 		width:0;
 		height:0;
 		border-left:6px solid transparent;
@@ -397,6 +454,7 @@
 		width:40%;
 		background:rgba(0,0,0,.7);
 		margin:0;
+		z-index:100;
 	}
 	.showAsideNav .search{
 		padding:0.5em 0 0 0.5em;
@@ -417,7 +475,15 @@
 		width:80%;
 		display:block;
 	}
+	/*atricle*/
+	.picWithWord{
+		position:relative;
+		float:none;
+		width:96%;
+	}
 }
+
+
 /*
 @media (max-width: 767px) {
 	body{
@@ -447,4 +513,27 @@
 		width:28%;
 		display:inline-block;
 	}
+}
+@media (max-width: 580px) {
+	.hidden{
+		display:none;
+	}
+	.videoPlay{
+		position:absolute;
+		top:0;
+		left:0;
+		display:block;
+		background:rgba(0,0,0,.8);
+		width:100%;	
+	}
+	.videoU{
+		width:100%;
+		max-width:100%;
+		margin:0;
+		left:0;
+	}
+	.videoU video{
+		width:100%;
+		max-width:100%;
+	}	
 }

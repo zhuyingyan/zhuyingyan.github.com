@@ -1,4 +1,5 @@
 $(function(){
+	console.log(document.documentElement.scrollHeight);
 	$('.m-navmain .m-button').click(function(){
 		if($('#aside-nav').hasClass('showAsideNav')){
 			$('#aside-nav').removeClass('showAsideNav');
@@ -21,5 +22,16 @@ $(function(){
 		if($('#aside-nav').hasClass('showAsideNav')){
 			$('#aside-nav').removeClass('showAsideNav');
 		}
+	});
+	$('.m-videoUl').click(function(event){
+		var bodyHeight=document.documentElement.scrollHeight,
+			clientHeight=document.documentElement.clientHeight;
+		bodyHeight=bodyHeight>clientHeight?bodyHeight:clientHeight;
+		$('#videoShow').addClass('videoPlay').height(bodyHeight);
+		$('#videoShow video')[0].src=event.target.href;
+		return false;
+	});
+	$('#videoShow .a-close').click(function(){
+		$('#videoShow').removeClass('videoPlay');
 	});
 });
