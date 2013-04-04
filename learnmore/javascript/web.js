@@ -23,7 +23,7 @@ $(function(){
 			$('#aside-nav').removeClass('showAsideNav');
 		}
 	});
-	$('.m-videoUl').click(function(event){
+	/*$('.m-videoUl').click(function(event){
 		var bodyHeight=document.documentElement.scrollHeight,
 			clientHeight=document.documentElement.clientHeight;
 		bodyHeight=bodyHeight>clientHeight?bodyHeight:clientHeight;
@@ -34,5 +34,16 @@ $(function(){
 	$('#videoShow .a-close').click(function(){
 		$('#videoShow').removeClass('videoPlay');
 		$('#videoShow video')[0].pause();
+	});*/
+	$('.a-close').click(function(){
+		if($(this).text().indexOf("关灯")!=-1){
+			$('body').css('background','rgba(0,0,0,.8)');
+			$(this).text("开灯");
+		}
+		else{
+			$('body').css('background','#fff');
+			$(this).text("关灯");
+		}
+		return false;
 	});
 });

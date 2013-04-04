@@ -308,22 +308,26 @@
 	
 }
 .videoU{
-	width:60%;
-	position:absolute;
-	left:50%;
-	margin:10% 0 0 -30%;
-	max-width:60%;
+	width:98%;
+	max-width:98%;
 }
 .videoU video{
 	width:100%;
 	max-width:100%;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
 }
 [class^='a-']{
-	color:#fff;
+	color:#555;
 }
 .a-close,.a-next{
 	float:right;
 	cursor:pointer;
+}
+.a-close{
+	font-size:2em;
+	margin-right:2%;
 }
 @media  (max-width: 979px) {          /*480*/
 	body{
