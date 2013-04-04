@@ -281,7 +281,7 @@
 	float:left;
 	width:80%;
 	max-width:80%;
-	
+	cursor:pointer;
 }
 .word{
 	font-size:0.8em;
@@ -325,6 +325,42 @@
 .a-close{
 	font-size:2em;
 	margin-right:2%;
+}
+/*图片展示*/
+.picBig{
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	background:rgba(0,0,0,.8);
+	width:100%;
+}
+.picDiv{
+	left:50%;
+	position:absolute;
+}
+.picDiv img{
+	max-width:100%;
+	min-width:30%;
+}
+.a-closePic,.showWord{
+	color:#fff;
+	position:absolute;
+}
+.showWord{
+	font-size:0.8em;
+	background:rgba(0,0,0,.8);
+	position:absolute;
+	
+}
+.a-closePic{	
+	right:0;
+	top:-1em;
+	cursor:pointer;
+}
+.showWord{
+	width:100%;
+	bottom:-6px;
 }
 @media  (max-width: 979px) {          /*480*/
 	body{
@@ -516,9 +552,9 @@
 	}
 }
 @media (max-width: 580px) {
-	.hidden{
+	/*.hidden{
 		display:none;
-	}
+	}*/
 	.videoPlay{
 		position:absolute;
 		top:0;
