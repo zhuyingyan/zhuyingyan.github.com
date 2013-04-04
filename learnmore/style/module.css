@@ -536,4 +536,7 @@
 		width:100%;
 		max-width:100%;
 	}	
+	[class^='a-']{
+		font-size:2em;
+	}
 }

@@ -33,5 +33,6 @@ $(function(){
 	});
 	$('#videoShow .a-close').click(function(){
 		$('#videoShow').removeClass('videoPlay');
+		$('#videoShow video')[0].pause();
 	});
 });
