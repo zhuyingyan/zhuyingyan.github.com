@@ -551,24 +551,20 @@ $(function(){
 				//判断资源是否全部已经获取
 				console.log(Game.dataSource.countLoad.loadedImage+" "+Game.dataSource.countLoad.loadedMusic+" "+Game.dataSource.countLoad.totalImage+" "+Game.dataSource.countLoad.totalMusic);
 				Game.timeOut=Game.timeOut-50;
-				if(Game.dataSource.countLoad.loadedImage+Game.dataSource.countLoad.loadedMusic<Game.dataSource.countLoad.totalImage+Game.dataSource.countLoad.totalMusic){
+				if(Game.dataSource.countLoad.loadedImage+Game.dataSource.countLoad.loadedMusic<Game.dataSource.countLoad.totalImage+Game.dataSource.countLoad.totalMusic&&Game.timeOut>0){
 						var aa=setTimeout(arguments.callee,50);
 						
-					}
-					else{
-						console.log("worng");
-						//cloneList(Game.dataSource.musicCache,Game.audiosList);
-						$("#load").hide();
-						$("#load").trigger("loadDone");
-						
-						
-						
-					}
-				if(Game.timeOut<0){
-						clearTimeout(aa);
+				}
+				else{
+					console.log("worng");
+					//cloneList(Game.dataSource.musicCache,Game.audiosList);
+					$("#load").hide();
+					$("#load").trigger("loadDone");
+					
 					
 					
 				}
+				
 			},50);
 			
 			
