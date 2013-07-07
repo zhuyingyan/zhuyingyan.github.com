@@ -551,8 +551,9 @@ $(function(){
 				//判断资源是否全部已经获取
 				console.log(Game.dataSource.countLoad.loadedImage+" "+Game.dataSource.countLoad.loadedMusic+" "+Game.dataSource.countLoad.totalImage+" "+Game.dataSource.countLoad.totalMusic);
 				Game.timeOut=Game.timeOut-50;
+				console.log(Game.timeOut);
 				if(Game.dataSource.countLoad.loadedImage+Game.dataSource.countLoad.loadedMusic<Game.dataSource.countLoad.totalImage+Game.dataSource.countLoad.totalMusic&&Game.timeOut>0){
-						var aa=setTimeout(arguments.callee,50);
+						setTimeout(arguments.callee,50);
 						
 				}
 				else{
