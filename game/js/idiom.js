@@ -152,7 +152,7 @@ $(function(){
 	}
 	//需要加载的资源
 	function initSource(){
-		Game.dataSource.imgCache=loadImage([{id:"icon",src:"./img/icon.png"},{id:"no-use",src:"./img/glyphicons-halflings.png"}]);
+		Game.dataSource.imgCache=loadImage([{id:"icon",src:"./img/icon.png"}]);
 	}
 	/*************/
 	
