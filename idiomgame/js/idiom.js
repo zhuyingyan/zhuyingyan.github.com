@@ -552,17 +552,20 @@ $(function(){
 				console.log(Game.dataSource.countLoad.loadedImage+" "+Game.dataSource.countLoad.loadedMusic+" "+Game.dataSource.countLoad.totalImage+" "+Game.dataSource.countLoad.totalMusic);
 				Game.timeOut=Game.timeOut-50;
 				if(Game.dataSource.countLoad.loadedImage+Game.dataSource.countLoad.loadedMusic<Game.dataSource.countLoad.totalImage+Game.dataSource.countLoad.totalMusic){
-					var aa=setTimeout(arguments.callee,50);
-					if(Game.timeOut<0){
-						clearTimeout(aa);
+						var aa=setTimeout(arguments.callee,50);
+						
 					}
-				}
-				else{
-					console.log("worng");
-					//cloneList(Game.dataSource.musicCache,Game.audiosList);
-					$("#load").hide();
-					$("#load").trigger("loadDone");
-					
+					else{
+						console.log("worng");
+						//cloneList(Game.dataSource.musicCache,Game.audiosList);
+						$("#load").hide();
+						$("#load").trigger("loadDone");
+						
+						
+						
+					}
+				if(Game.timeOut<0){
+						clearTimeout(aa);
 					
 					
 				}
