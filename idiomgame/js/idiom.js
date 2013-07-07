@@ -42,7 +42,7 @@ $(function(){
 	soundsList:[],                     //放sound类
 	heartsList:[],                    //放心用的 
 	myTime:0,
-	timeOut:5000,
+	timeOut:500,
 	dataSource:{
 		imgCache:[],        //照片缓存
 		musicCache:[],
@@ -550,10 +550,10 @@ $(function(){
 			setTimeout(function(){
 				//判断资源是否全部已经获取
 				console.log(Game.dataSource.countLoad.loadedImage+" "+Game.dataSource.countLoad.loadedMusic+" "+Game.dataSource.countLoad.totalImage+" "+Game.dataSource.countLoad.totalMusic);
-				Game.timeout=Game.timeout-50;
+				Game.timeOut=Game.timeOut-50;
 				if(Game.dataSource.countLoad.loadedImage+Game.dataSource.countLoad.loadedMusic<Game.dataSource.countLoad.totalImage+Game.dataSource.countLoad.totalMusic){
 					var aa=setTimeout(arguments.callee,50);
-					if(Game.timeout<0){
+					if(Game.timeOut<0){
 						clearTimeout(aa);
 					}
 				}
