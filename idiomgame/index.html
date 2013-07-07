@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>成语大战</title>
+		<link rel="stylesheet" href="css/chengyu.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script src="js/socket.io.js"></script>
+	</head>
+	<body>
+		<section id="mainPage">
+			<h1 class="title-main">成语大战</h1>
+			<div class="btu-single">单人游戏</div>
+			<div class="btu-multiple">多人游戏</div>
+			<div class="btu-about">关于我们</div>
+		</section>
+		<section id="single-levels">
+			<h2 class="title-level">关卡</h2>
+			<div class="box">
+				<div class="btu-back"><span>返回主页</span></div>
+				<ul class="levels-list">
+					<li class="btu-level1">夸奖 一段</li>
+					<li class="btu-level2">夸奖 二段</li>
+					<li class="btu-level3">夸奖 三段</li>
+				</ul>
+			</div>
+		</section>
+		<input type="button" class="pause" id="pause" value="暂停" />
+		<canvas id="gameCanvas"></canvas>
+		<div id="success" class="output">
+			<span>胜利！用时：<span class="time"></span>秒</span>
+			<button class="nextLevel">下一回合</button>
+			<button class="to-back">返回</button>
+		</div>
+		<div id="fail" class="output">
+			<span>失败！用时：<span class="time"></span>秒</span>
+			<button class="again">再战一局</button>
+			<button class="to-back">返回</button>
+		</div>
+		<div id="load" class="loadPage">
+			请等候！加载资源中
+		</div>
+		<div id="pauseUse" class="pauseUse">点击继续</div>
+		<div id="login" class="login">
+			<label for="usename">输入你的名字：</label>
+			<input type="text" id="usename" />
+			<input type="button" value="登陆" id="btu-login" />
+		</div>
+		<script type="text/javascript" src="js/idiom.js"></script>
+	</body>
+</html>
