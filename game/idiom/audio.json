@@ -1,0 +1,81 @@
+[{
+	"cardId":1,
+	"cardName":"oyeah",
+	"cardM":"audio/1m_1.mp3",
+	"cardF":"audio/1f_1.mp3"
+ },{
+	"cardId":2,
+	"cardName":"oach",
+	"cardM":"audio/2m_1.mp3",
+	"cardF":"audio/2f_1.mp3"
+},{
+	"cardId":3,
+	"cardName":"好烦噢",
+	"cardM":"audio/3m_1.mp3",
+	"cardF":"audio/3f_1.mp3"
+},{
+	"cardId":4,
+	"cardName":"亚美爹",
+	"cardM":"audio/4m_1.mp3",
+	"cardF":"audio/4f_1.mp3"
+},{
+	"cardId":5,
+	"cardName":"哎哟",
+	"cardM":"audio/5m_1.mp3",
+	"cardF":"audio/5f_1.mp3"
+},{
+	"cardId":6,
+	"cardName":"你累了",
+	"cardM":"audio/6m_1.mp3",
+	"cardF":"audio/6f_1.mp3"
+},{
+	"cardId":7,
+	"cardName":"思密达",
+	"cardM":"audio/7m_1.mp3",
+	"cardF":"audio/7f_1.mp3"
+},{
+	"cardId":8,
+	"cardName":"别这样",
+	"cardM":"audio/8m_1.mp3",
+	"cardF":"audio/8f_1.mp3"
+},{
+	"cardId":9,
+	"cardName":"讨厌",
+	"cardM":"audio/9m_1.mp3",
+	"cardF":"audio/9f_1.mp3"
+},{
+	"cardId":10,
+	"cardName":"爽",
+	"cardM":"audio/10m_1.mp3",
+	"cardF":"audio/10f_1.mp3"
+},{
+	"cardId":11,
+	"cardName":"好痒",
+	"cardM":"audio/11m_1.mp3",
+	"cardF":"audio/11f_1.mp3"
+},{
+	"cardId":12,
+	"cardName":"老师轻点",
+	"cardM":"audio/12m_1.mp3",
+	"cardF":"audio/12f_1.mp3"
+},{
+	"cardId":13,
+	"cardName":"疼",
+	"cardM":"audio/13m_1.mp3",
+	"cardF":"audio/13f_1.mp3"
+},{
+	"cardId":14,
+	"cardName":"中国加油",
+	"cardM":"audio/14m_1.mp3",
+	"cardF":"audio/14f_1.mp3"
+},{
+	"cardId":15,
+	"cardName":"好臭",
+	"cardM":"audio/15m_1.mp3",
+	"cardF":"audio/15f_1.mp3"
+},{
+	"cardId":16,
+	"cardName":"啪啪啪",
+	"cardM":"audio/16m_1.mp3",
+	"cardF":"audio/16f_1.mp3"
+}]
