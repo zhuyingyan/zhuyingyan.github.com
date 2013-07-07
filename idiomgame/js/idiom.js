@@ -42,7 +42,7 @@ $(function(){
 	soundsList:[],                     //放sound类
 	heartsList:[],                    //放心用的 
 	myTime:0,
-	timeOut:500,
+	timeOut:1000,
 	dataSource:{
 		imgCache:[],        //照片缓存
 		musicCache:[],
