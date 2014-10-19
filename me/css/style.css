@@ -45,7 +45,7 @@ a{color:#000;text-decoration:none;}
 .cont-qq:before{background-position:-64px 0;}
 .cont-git:before{background-position:-96px 0;}
 .cont-git:hover:before{background-position:-96px -31px;}
-.cont-git:hover{color:#bc1010;}
+.cont-git a:hover{color:#bc1010;}
 .lis-cont .inner{text-indent:-9999px;width:36px;}
 
 /* m2 */
@@ -83,7 +83,9 @@ a{color:#000;text-decoration:none;}
 .circle-left-co{background:#358654;z-index:2;-webkit-transition:-webkit-transform .2s ease-in;transition:transform .2s ease-in;-webkit-transform:rotate(0);transform:rotate(0);}
 .circle-right-co{background:#358654;z-index:5;-webkit-transition:-webkit-transform .2s ease-in .2s;transition:transform .2s ease-in .2s,opacity .4s ease-in;-webkit-transform:rotate(0),opacity .4s ease-in;transform:rotate(0);opacity:0;}
 .lis-self p{text-align:center;padding:5px 0;}
-
+.cir2 .circle-left-co,.cir2 .circle-right-co{background:#7626e2;}
+.cir3 .circle-left-co,.cir3 .circle-right-co{background:#1c36d2;}
+.cir4 .circle-left-co,.cir4  .circle-right-co{background:#def65c;}
 
 /* m5 */
 .m5{width:50%;float:right;}
