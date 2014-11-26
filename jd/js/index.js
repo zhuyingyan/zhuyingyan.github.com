@@ -374,6 +374,5 @@
         $this.find(".star").width(itemWidth);
     });
 
-    $("img").lazyload();
 
 })(jQuery);
