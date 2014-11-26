@@ -166,6 +166,7 @@ figure { margin: 0; }
 
 .lis-slide { width: 10000px; position: relative; padding-left: 4px; }
 .lis-slide li { float: left; padding: 0 15px; border-right: 1px solid #EAEBED; }
+.lis-slide img { width: 164px; height: 94px; }
 
 .zone-name { height: 22px; line-height: 22px; font: 14px "microsoft yahei"; margin-bottom: 10px; }
 
