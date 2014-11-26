@@ -278,7 +278,7 @@ figure { margin: 0; }
 .lteie8 .btn-dw-iphone, .lteie8 .btn-dw-all { background: url(../imgs/ie6.png) 0 0; border: 0; }
 .lteie8 .btn-free { background: url(../imgs/ie6.png) 0 -56px; border: 0; }
 .lteie8 .focusbox-wr { _width: 525px; _position: relative; }
-.lteie8 .focus-if .focustxt { *position: relative; }
+.lteie8 .focus-if .focustxt { position: relative; }
 .lteie8 .ico-play { _left: -30px; }
 .lteie8 .lis-hit .hit-item .hit-num { *line-height: 80px; }
 .lteie8 .lis-hit .hitso .hit-num { *line-height: 44px; }
