@@ -1,101 +1,114 @@
-/*! Echo v1.5.0 | (c) 2014 @toddmotto | MIT license | github.com/toddmotto/echo */
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(factory);
-    } else if (typeof exports === 'object') {
-        module.exports = factory;
-    } else {
-        root.echo = factory(root);
-    }
-})(this, function (root) {
-
-    'use strict';
-
-    var exports = {};
-
-    var callback = function () {};
-
-    var offset, poll, throttle, unload;
-
-    var inView = function (element, view) {
-        var box = element.getBoundingClientRect();
-        return (box.right >= view.l && box.bottom >= view.t && box.left <= view.r && box.top <= view.b);
-    };
-
-    var debounce = function () {
-        clearTimeout(poll);
-        poll = setTimeout(exports.render, throttle);
-    };
-
-    exports.init = function (opts) {
-        opts = opts || {};
-        var offsetAll = opts.offset || 0;
-        var offsetVertical = opts.offsetVertical || offsetAll;
-        var offsetHorizontal = opts.offsetHorizontal || offsetAll;
-        var optionToInt = function (opt, fallback) {
-            return parseInt(opt || fallback, 10);
-        };
-        offset = {
-            t: optionToInt(opts.offsetTop, offsetVertical),
-            b: optionToInt(opts.offsetBottom, offsetVertical),
-            l: optionToInt(opts.offsetLeft, offsetHorizontal),
-            r: optionToInt(opts.offsetRight, offsetHorizontal)
-        };
-        throttle = optionToInt(opts.throttle, 250);
-        unload = !!opts.unload;
-        callback = opts.callback || callback;
-        exports.render();
-        if (document.addEventListener) {
-            root.addEventListener('scroll', debounce, false);
-            root.addEventListener('load', debounce, false);
+/**
+ * 图片延时加载插件
+ *
+ * @module lazy
+ * @author wangcanlin@xunlei.com
+ * @version 1.0
+ * @example
+ lazy.init();
+ lazy.run();
+ */
+var LAZY=(function(){
+    var pResizeTimer = null;
+    var imgs={};
+    function addEventHandler (oTarget, sEventType, fnHandler) {
+        if (oTarget.addEventListener) {
+            oTarget.addEventListener(sEventType, fnHandler, false);
+        } else if (oTarget.attachEvent) {
+            oTarget.attachEvent("on" + sEventType, fnHandler);
         } else {
-            root.attachEvent('onscroll', debounce);
-            root.attachEvent('onload', debounce);
+            oTarget["on" + sEventType] = fnHandler;
         }
     };
+    function resize(){
+        if(pResizeTimer) return '';
+        pResizeTimer = setTimeout(function(){
+            resize_run();
+            try{
+                clearTimeout(pResizeTimer);
+            }
+            catch(e){}
+            pResizeTimer=null;
+        }, 100);
+    }
+    function resize_run(){
+        var min={};
+        var max={};
+        //min.Top=document.documentElement.scrollTop;
+        min.Top = document.body.scrollTop + document.documentElement.scrollTop;
+        min.Left=document.documentElement.scrollLeft;
+        max.Top=min.Top+document.documentElement.clientHeight;
+        max.Left=min.Left+document.documentElement.clientWidth;
 
-    exports.render = function () {
-        var nodes = document.querySelectorAll('img[data-echo]');
-        var length = nodes.length;
-        var src, elem;
-        var view = {
-            l: 0 - offset.l,
-            t: 0 - offset.t,
-            b: (root.innerHeight || document.documentElement.clientHeight) + offset.b,
-            r: (root.innerWidth || document.documentElement.clientWidth) + offset.r
-        };
-        for (var i = 0; i < length; i++) {
-            elem = nodes[i];
-            if (inView(elem, view)) {
-                if (unload) {
-                    elem.setAttribute('data-echo-placeholder', elem.src);
+        for(var i in imgs){
+            if(imgs[i]){
+                var _img=imgs[i];
+                var img=document.getElementById(i);
+                var width = img.clientWidth;
+                var height = img.clientHeight;
+                var wh=position(img);
+                if(
+                    (wh.Top>min.Top && wh.Top<max.Top && wh.Left>min.Left && wh.Left<max.Left)
+                        ||
+                        ((wh.Top+height)>min.Top && wh.Top<max.Top && (wh.Left+width)>min.Left && wh.Left<max.Left))
+                {
+                    img.src=_img.src;
+                    delete imgs[i];
                 }
-                elem.src = elem.getAttribute('data-echo');
-                if (!unload) {
-                    elem.removeAttribute('data-echo');
-                }
-                callback(elem, 'load');
-            } else if (unload && !!(src = elem.getAttribute('data-echo-placeholder'))) {
-                elem.src = src;
-                elem.removeAttribute('data-echo-placeholder');
-                callback(elem, 'unload');
+
             }
         }
-        if (!length) {
-            exports.detach();
+    }
+
+    function position(o){
+        var p={Top:0,Left:0};
+        while(!!o){
+            p.Top+=o.offsetTop;
+            p.Left+=o.offsetLeft;
+            o=o.offsetParent;
         }
+        return p;
+    }
+
+    return {
+        init:function(){
+            for(var i=0;i<document.images.length;i++){
+                var img = document.images[i];
+                var config={};
+                config.id = img.id;
+                config.src = img.getAttribute('_src');
+                if(config.src && !config.id){
+                    config.id = encodeURIComponent(config.src) + Math.random();
+                    img.id = config.id;
+                }
+                if(!config.id || !config.src) continue;
+                LAZY.push(config);
+            }
+            var ttiframes=document.body.getElementsByTagName("iframe");
+            for(var i=0;i<ttiframes.length;i++){
+                var config={};
+                config.id = ttiframes[i].id;
+                config.src = ttiframes[i].getAttribute('_src');
+                if(config.src && !config.id){
+                    config.id = encodeURIComponent(config.src) + Math.random();
+                    ttiframes[i].id = config.id;
+                }
+                if(!config.id || !config.src) continue;
+                LAZY.push(config);
+            }
+        },
+        push:function(config){
+            imgs[config.id] = config;
+        },
+        run:function(){
+            resize_run();
+            addEventHandler(window,'scroll',resize);
+            addEventHandler(window,'resize',resize);
+        },
+        resize_run:resize_run
     };
+})();
 
-    exports.detach = function () {
-        if (document.removeEventListener) {
-            root.removeEventListener('scroll', debounce);
-        } else {
-            root.detachEvent('onscroll', debounce);
-        }
-        clearTimeout(poll);
-    };
-
-    return exports;
-
-});
-
+//初始化lazy
+LAZY.init();
+LAZY.run();
