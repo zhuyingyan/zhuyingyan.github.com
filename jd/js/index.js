@@ -22,12 +22,12 @@
 
             this.$s_li = this.$el.find(this.options.slide_item);
             this.$s_len = parseInt(this.$s_li.length);
-
+            console.log(this.$s_len);
             this.$s_max = Math.ceil(this.$s_len/this.options.s_num * Math.pow(10,0)) / Math.pow(10,0)-1;
 
             this.$move = this.$s_li.outerWidth(true)  ;
             this.c_num = Math.floor(this.$el.width()/this.$move);
-
+            console.log(this.$move);
             this.$prev = this.$el.find(this.options.prev);
             this.$next = this.$el.find(this.options.next);
 
@@ -80,7 +80,6 @@
                 _self.$s_li.each(function(){
                     $(this).removeClass("on");
                 });
-                _self.$s_li.eq(_self.current+2).addClass("on");
                 event.preventDefault();
                 return false;
             });
@@ -112,7 +111,6 @@
                 _self.$s_li.each(function(){
                     $(this).removeClass("on");
                 });
-                _self.$s_li.eq(_self.current+2).addClass("on");
                 event.preventDefault();
                 return false;
             });
