@@ -22,11 +22,13 @@
 
             this.$s_li = this.$el.find(this.options.slide_item);
             this.$s_len = parseInt(this.$s_li.length);
+
             this.$s_max = Math.ceil(this.$s_len/this.options.s_num * Math.pow(10,0)) / Math.pow(10,0)-1;
 
-            this.$originWidth = this.$s_li.outerWidth(true);
             this.$move = this.$s_li.outerWidth(true)  ;
             this.c_num = Math.floor(this.$el.width()/this.$move);
+            console.log(this.c_num);
+
             this.$prev = this.$el.find(this.options.prev);
             this.$next = this.$el.find(this.options.next);
 
@@ -40,7 +42,6 @@
             if(this.options.isAnimate){
                 this._animateEvents();
             }
-            this._resizeEvents();
 
         },
         _hoverEvents:function(){
@@ -54,10 +55,11 @@
 
             this.$next.click(function(event){
                 var last_px ;
-                //_self.c_num = Math.floor(_self.$el.width()/_self.$move);
+                _self.c_num = Math.floor(_self.$el.width()/_self.$move);
                 if(_self.options.s_num>_self.c_num){
                     _self.options.s_num=_self.c_num;
                 }
+                console.log(_self.options.s_num);
                 if(_self.options.isAnimate){
                     clearInterval(_self.flag);
                 }
@@ -80,6 +82,7 @@
                 _self.$s_li.each(function(){
                     $(this).removeClass("on");
                 });
+                _self.$s_li.eq(_self.current+2).addClass("on");
                 event.preventDefault();
                 return false;
             });
@@ -111,6 +114,7 @@
                 _self.$s_li.each(function(){
                     $(this).removeClass("on");
                 });
+                _self.$s_li.eq(_self.current+2).addClass("on");
                 event.preventDefault();
                 return false;
             });
@@ -129,18 +133,6 @@
                     _self.$el_ul.css("left", 0); //初始化left
                 });
             },parseInt(this.options.time));
-        },
-        _resizeEvents:function(){
-            var _self = this;
-            $(window).resize(function(){
-                var li_width,last_px;
-                _self.c_num = Math.floor(_self.$el.width()/_self.$originWidth);
-                _self.$move = li_width =Math.floor( _self.$el.width() / _self.c_num);
-                _self.$s_li.css("width",li_width-31+"px");
-                _self.$el_ul.css('width',(_self.$move) * _self.$s_len);
-                last_px = -(_self.$move * _self.current);
-                _self.$el_ul.animate({left:last_px + 'px'}, 'fast');
-            });
         }
 
     };
@@ -180,7 +172,8 @@
         time:5000 ,
         isLeftRight:false ,
         leftArrow:null,
-        rightArrow:null
+        rightArrow:null,
+        navShowNum: 6
     };
     $.Tag.prototype = {
         _init  :function(options){
@@ -201,19 +194,14 @@
                 this.$riArr = this.$el.find(this.options.rightArrow);
                 this.leftPx = 0;
                 this.leftest = 0;  //左边边界值
+                this.rightest = this.options.navShowNum - 1;
                 this.navItemWidth = this.$navItem.eq(0).outerWidth(true);
-                this.navShowNum = Math.floor($(this.options.nav).width()/this.navItemWidth);
-                this.rightest = this.navShowNum - 1;
                 this._lrEvent();
             }
 
             if(this.options.isAnimate){
                 this.isSwitch = this.options.isAnimate;
                 this._autoEvent();
-            }
-            var _self =this;
-            window.onresize = function(){
-                _self.throttle(_self.resizeFun,_self);
             }
 
         },
@@ -238,110 +226,9 @@
                     that = _self.$navItem.eq(event.data.num);
                     _self._addClass(event.data.num,_self.addClassName);
                     _self.current = event.data.num;
-                    if(_self.isSwitch && _self.options.event!="hover"){
-                        _self._autoEvent();
-                    }
-                    return false;
-                });
-                _self.$navItem.eq(i).on("mouseleave",{num:i},function(event){
-                    if(_self.isSwitch && _self.options.event=="hover"){
-                        _self._autoEvent();
-                    }
                     return false;
                 });
             }
-        },
-        toRight:function(){
-            var _self = this,last_px;
-            if(_self.current > _self.length - 1){
-                _self.current = 0;
-                if(_self.options.isLeftRight){
-                    last_px = 0;
-                    _self.leftPx = last_px;
-                    _self.leftest = 0;
-                    _self.rightest = _self.navShowNum - 1;
-                    _self.$nav.animate({left:last_px + 'px'}, 'slow');
-                }
-                _self._addClass(_self.current,_self.addClassName);
-                return false;
-            }
-
-            else if((_self.current - 1)==_self.rightest){
-                _self._addClass(_self.current,_self.addClassName);
-                if(_self.options.isLeftRight){
-                    last_px = _self.leftPx - _self.navItemWidth;
-                    _self.leftPx = last_px;
-                    _self.leftest = _self.leftest + 1;
-                    _self.rightest = _self.rightest + 1;
-                    _self.$nav.animate({left:last_px + 'px'}, 'slow');
-                }
-                return false;
-            }
-            else{
-                _self._addClass(_self.current,_self.addClassName);
-                return false;
-            }
-        },
-        _lrEvent:function(){
-            var _self = this,last_px;
-            this.$leArr.click(function(){
-                clearInterval(_self.interFun);
-                _self.current = _self.current - 1;
-                if(_self.current < 0){
-                    _self.current = _self.length - 1;
-                    last_px = _self.leftPx - _self.navItemWidth * (_self.length - _self.navShowNum);
-                    _self.leftPx = last_px;
-                    _self.leftest = _self.length - _self.navShowNum;
-                    _self.rightest = _self.length - 1;
-                    _self._addClass(_self.current,_self.addClassName);
-                    _self.$nav.animate({left:last_px + 'px'}, 'slow');
-                }
-                else if( (_self.current + 1)==_self.leftest){
-                    last_px = _self.leftPx + _self.navItemWidth;
-                    _self._addClass(_self.current,_self.addClassName);
-                    _self.$nav.animate({left:last_px + 'px'}, 'slow');
-                    _self.leftPx = last_px;
-                    _self.leftest = _self.leftest - 1;
-                    _self.rightest = _self.rightest - 1;
-                }
-                else{
-                    _self._addClass(_self.current,_self.addClassName);
-                }
-                _self._autoEvent();
-                return false;
-
-            });
-
-            this.$riArr.click(function(){
-                clearInterval(_self.interFun);
-                _self.current = _self.current + 1;
-                _self.toRight();
-                _self._autoEvent();
-                return false;
-            });
-
-        },
-
-        _autoEvent:function(){
-            var _self = this;
-            _self.interFun = setInterval(function(){
-                _self.current = _self.current + 1;
-                _self.toRight();
-            },this.options.time);
-        },
-        throttle:function(method,context){
-            clearTimeout(method.tId);
-            method.tId = setTimeout(function(){
-                method.call(context);
-            },100);
-        },
-        resizeFun:function(){
-            var parWidth;
-            this.navShowNum = Math.floor($(this.options.nav).width()/this.navItemWidth);
-            this.rightest = this.navShowNum - 1;
-            parWidth = this.navItemWidth * this.navShowNum;
-            this.$nav.parent().css("width",parWidth+"px");
-
         }
 
     };
@@ -370,24 +257,17 @@
         s_num:5,
         content:".slide-wr"
     });
+    $('#tagPt').tag({
+        nav:'.slide_nav',
+        contentArr:'#tagPt .slide_wr',
+        contentItemArr:['.tag_cont'],
+        event:'hover'
+    });
     $('.focus').tag({
         nav:'.focus-nav',
         contentArr:'.ps_tag',
         contentItemArr:['li','li'],
-        event:"hover",
-        isLeftRight:true,
-        leftArrow:".ico-prev",
-        rightArrow:".ico-next",
-        isAnimate:true
+        event:"hover"
     });
-
-    // star
-    $(".hit-star").each(function(){
-        var $this =$(this),widthPar = $this.find(".star-wr").width(),itemWidth;
-        itemWidth = parseInt($this.find(".star-txt span").text())*parseInt(widthPar)/100;
-        $this.find(".star").width(itemWidth);
-    });
-
-
 
 })(jQuery);
